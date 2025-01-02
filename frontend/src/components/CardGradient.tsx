@@ -13,7 +13,7 @@ export default function CardGradient({ children }: ICardGradient) {
             <div
                 className="rounded-xl p-4 flex-1 w-full backdrop-blur-xxl"
                 style={{
-                    backgroundColor: 'rgba(var(--background), 0.6'
+                    backgroundColor: 'rgba(var(--background), 0.65'
                 }}
             >
                 {children}
