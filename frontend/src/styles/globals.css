@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 255, 255, 255;
+  --foreground: 23, 23, 23;
+  --custom-blue: 106, 163, 255;
+  --custom-purple: 158, 88, 224;
+  --custom-pink: 226, 107, 167;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 10, 10, 10;
+    --foreground: 237, 237, 237;
+  }
+}
+
+body {
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
+  font-family: Arial, Helvetica, sans-serif;
+}
