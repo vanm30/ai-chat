@@ -11,8 +11,13 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'custom-blue': "var(--custom-blue)",
+        'custom-purple': "var(--custom-purple)",
+        'custom-pink': "var(--custom-pink)",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
 } satisfies Config;

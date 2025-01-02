@@ -1,0 +1,40 @@
+services:
+  aichatdb:
+    image: postgres:13
+    container_name: aichatdb
+    ports:
+      - "5010:5432"
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
+    networks:
+      - aichat_network
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env.local
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8181:3333"
+    volumes:
+      - ./backend:/app
+    networks:
+      - aichat_network   
+    restart: unless-stopped
+    
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3012:3000"
+    volumes:
+      - ./frontend:/app
+    networks:
+      - aichat_network
+    restart: unless-stopped
+
+networks:
+  aichat_network:
+    driver: bridge
